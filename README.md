@@ -1,14 +1,9 @@
-# :wave: Say hi to Elizabeth :wave:
+# Repository Description
+This is a shopify reposity that was initially cloned from https://github.com/polidario/Elizabeth_Clean.
 
-[![Generic badge](https://img.shields.io/badge/course%20available%3F-yes-green.svg)](https://shields.io/)
+The repository is used for learning how to create shopify themes. Most of my notes will be found in `./shopifyNotes.md`
 
-This project is created and intended to be used for the [Shopify Theme Development – Online Store 2.0 + TailwindCSS course](https://weeklyhow.com/courses/)
-
-
-[Get the course!](https://weeklyhow.com/) | [Lessons covered](#lessons-covered) |
-[How to use](#how-to-use) | [Not a student?](#not-a-student)
-
-## Lessons covered
+## Lessons covered from the course
 
 Status | Lectures
 ------------ | -------------
@@ -26,15 +21,19 @@ Status | Lectures
 :heavy_check_mark: | Search Page
 :hourglass: | More lessons coming
 
-## How to use
-
-To use this repository for making Shopify themes, use the following command of Shopify CLI.
-```sh
-shopify theme init [ NAME OF YOUR THEME ] --clone-url https://github.com/polidario/Elizabeth_Clean
+## Steps to get the course up and running
+Simultaneously run the following commands in separate terminals
+### Start the Shopify Store Locally
+```
+shopify theme dev
 ```
 
-If you don't have Shopify CLI installed to your computer, navigate to the [installation page of Shopify CLI](https://shopify.dev/themes/tools/cli/installation).
+Or, if the store is not configure yet:
+```
+shopify theme dev --store
+```
 
-## Not a student
-
-If you're not a student, you can still use this repository to start a new Shopify theme project. However, any issues that you will encounter throughout your development will not be supported as the instructor will only answer questions through the course's QnA page.
+### Start Tailwind CSS build --watch
+```
+npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch
+```

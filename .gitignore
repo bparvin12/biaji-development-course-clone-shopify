@@ -1,0 +1,56 @@
+# Shopify specific files and directories
+/config/settings_data.json
+/config/settings_data_schema.json
+/config/settings.html
+/config/settings_schema.json
+/config/settings_data_defaults.json
+/layout/theme.liquid
+/layout/theme.scss.liquid
+/snippets/product-form.liquid
+/snippets/social-meta-tags.liquid
+/snippets/social-sharing.liquid
+/snippets/themed.js
+/snippets/themed.scss
+/templates/404.liquid
+/templates/article.liquid
+/templates/blog.liquid
+/templates/collection.liquid
+/templates/index.liquid
+/templates/list-collections.liquid
+/templates/page.liquid
+/templates/password.liquid
+/templates/search.liquid
+/templates/search-bar.liquid
+/templates/404.json
+/templates/collection.json
+/templates/index.json
+/templates/list-collections.json
+/templates/page.json
+/templates/search.json
+
+# Exclude node_modules and other package manager directories
+/node_modules/
+/yarn-error.log
+npm-debug.log
+
+# Exclude development and build files
+.themeignore
+*.log
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.vscode/
+.idea/
+.env
+
+# Ignore Shopify theme cache files
+config.yml
+config/settings_schema.json
+config/settings_data.json
+config/settings_data_schema.json
+
+# Ignore Shopify theme binaries
+theme_*
+
+# Ignore deployment files
+config/deploy.json
