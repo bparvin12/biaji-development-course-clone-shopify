@@ -14,7 +14,7 @@ Template language used for creating or modify shopify themes, but it is very lim
 - static content
 - dymanic content
 
-Categorized by three features
+### Categorized by three features
 - **objects**: wrapped in curly braces {{ }}
 - **tags**: tells template what to do -- {% %} {% end %}
 
@@ -44,6 +44,22 @@ Categorized by three features
   {{ product.title | SPECIFIC_FILTER }}
   {{ product.title | upcase }}
   ```
+
+### Section Schema
+You can only use ONE (1) Schema Tag per section, and you can only use JSON, and you can only use the following 10 attributes:
+1. name
+2. tag
+3. class
+4. limit
+5. settings
+6. blocks
+7. max_blocks
+8. presets
+9. default
+10. locales
+11. enabled_on
+12. disabled_on
+
 
 ## Creating Development Store
 In shopify.dev, create new store: 

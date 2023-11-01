@@ -1,4 +1,4 @@
 package.json
 package-lock.json
-node_modules
-css
+node_modules/
+css/

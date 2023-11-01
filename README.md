@@ -21,9 +21,19 @@ Status | Lectures
 :heavy_check_mark: | Search Page
 :hourglass: | More lessons coming
 
+## Shopify Store Admin Login
+https://admin.shopify.com/store/biaji-development-online-store/
+
+To find password:
+1. login to admin story url
+2. go to online store
+3. preferences
+4. scroll down password protection
+
 ## Steps to get the course up and running
 Simultaneously run the following commands in separate terminals
 ### Start the Shopify Store Locally
+For what is mentioned below, the following script has been added in `package.json` --> `npm run start`
 ```
 shopify theme dev
 ```
@@ -33,7 +43,9 @@ Or, if the store is not configure yet:
 shopify theme dev --store
 ```
 
+
 ### Start Tailwind CSS build --watch
+For what is mentioned below, the following script has been added in `package.json` --> `npm run tailwind`
 ```
 npx tailwindcss -i ./src/tailwind.css -o ./assets/application.css --watch
 ```
