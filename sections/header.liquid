@@ -1,4 +1,6 @@
-<div class="relative bg-white" x-data="{ mobileMenuOpen: true }">
+{% assign main_menu_linklist = linklists[section.settings.menu].links %}
+
+  <div class="relative bg-white" x-data="{ mobileMenuOpen: true }">
   <div class="mx-auto px-4 sm:px-6">
     <div class="flex justify-between items-center py-6 md:justify-start md:space-x-10">
       <!-- STORE NAME / STORE LOGO -->
@@ -20,7 +22,7 @@
 
       <!-- NAVIGATION MENU -->
       <nav class="hidden md:flex space-x-10" x-data="{ open: false }">
-        {% for link in linklists.main-menu.links %}
+        {% for link in main_menu_linklist %}
 
           {% comment %} Dropdown Links {% endcomment %}
           {% if link.links != blank %}
@@ -72,10 +74,13 @@
           {% render 'icon-shopping-bag' %}
         </a>
 
-        <a href={{ routes.account_login_url }} class="text-base text-gray-500 hover:text-gray-900">Login
-        </a>
-        <a href={{ routes.account_register_url }} class="text-base text-gray-500 hover:text-gray-900">Register
-        </a>
+        {% if shop.customer_accounts_enabled %}
+          <a href={{ routes.account_login_url }} class="text-base text-gray-500 hover:text-gray-900">Login
+          </a>
+          <a href={{ routes.account_register_url }} class="text-base text-gray-500 hover:text-gray-900">Register
+          </a>
+        {% endif %}
+
       </div>
     </div>
   </div>
@@ -89,7 +94,7 @@
         <div class="flex items-center justify-between pb-3">
           <div>
             <h1 class="text-lg text-gray-500">
-              {{ shop.name }}
+              {{ section.settings.mobile_menu_title }}
             </h1>
           </div>
           <div class="-mr-2">
@@ -105,7 +110,7 @@
         <!-- NAVIGATION LINKS FOR MOBILE MENU -->
         <div class="pt-3">
           <nav class="grid gap-y-7">
-            {% for link in linklists.main-menu.links %}
+            {% for link in main_menu_linklist %}
               {% assign link_handle = link.handle | replace: '-', '_' %}
               {% if link.links != blank %}
                 <div x-data="{ {{ link_handle }}: false }" class="relative">
@@ -145,7 +150,21 @@
 
 {% schema %}
   {
-    "name": "Navigational Bar",
-    "settings": []
+    "name": "Header",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "mobile_menu_title",
+        "label": "Title",
+        "default": "Menu",
+        "info": "This is the title for the mobile menu window"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Header Menu",
+        "default": "main-menu"
+      }
+    ]
   }
 {% endschema %}
